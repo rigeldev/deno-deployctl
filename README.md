@@ -7,7 +7,7 @@ Docker image for deploying applications to [Deno Deploy](https://deno.com/deploy
 Uses `denoland/deno` as base image and installs the [deployctl](https://github.com/denoland/deployctl).
 
 ## Tags
-For the moment I'm following the `denoland/deno` base image tags.
+For tagging I'm using the following pattern `deno-version`-`deployctl-version`.
 
 [Available tags](https://hub.docker.com/r/rigeldev/denodeployctl/tags)
 
