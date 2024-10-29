@@ -9,7 +9,7 @@ Uses [denoland/deno](https://hub.docker.com/r/denoland/deno) as base image and i
 ## Tags
 For tagging I'm using the following pattern `deno-version`-`deployctl-version`.
 
-[Available tags](https://hub.docker.com/r/rigeldev/denodeployctl/tags)
+[Available tags](https://hub.docker.com/r/rigeldev/deno-deployctl/tags)
 
 ## Status
 I'm manually doing the updates and versioning for now since I'm just doing some initial tests with Deno Deploy.
