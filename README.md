@@ -1,10 +1,10 @@
-# denodeployctl
+# deno-deployctl
 
-> docker pull rigeldev/denodeployctl:latest
+> docker pull rigeldev/deno-deployctl:latest
 
 Docker image for deploying applications to [Deno Deploy](https://deno.com/deploy).
 
-Uses `denoland/deno` as base image and installs the [deployctl](https://github.com/denoland/deployctl).
+Uses [denoland/deno](https://hub.docker.com/r/denoland/deno) as base image and installs the [deployctl](https://github.com/denoland/deployctl).
 
 ## Tags
 For tagging I'm using the following pattern `deno-version`-`deployctl-version`.
