@@ -12,7 +12,10 @@ For tagging I'm using the following pattern `deno-version`-`deployctl-version`.
 [Available tags](https://hub.docker.com/r/rigeldev/deno-deployctl/tags)
 
 ## Status
-I'm manually doing the updates and versioning for now since I'm just doing some initial tests with Deno Deploy.
+This image is automatically updated daily via GitHub Actions when new versions of either the Deno base image or the deployctl tool are released.
 
-When my usage becomes more stable / when I'm more invested into [Deno Deploy](https://deno.com/deploy) it will make sense to 
-automate following the versioning of the base image and the deployctl tool.
+The automation:
+- Checks for new versions daily at 6 AM UTC
+- Only builds and pushes if a new version combination is detected
+- Updates both versioned tags (e.g., `2.0.4-1.13.0`) and the `latest` tag
+- Supports multi-platform builds (linux/amd64, linux/arm64)
