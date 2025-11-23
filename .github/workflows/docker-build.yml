@@ -131,3 +131,31 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           repository: ${{ env.IMAGE_NAME }}
           readme-filepath: ./README.md
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ needs.check-versions.outputs.image-tag }}
+          name: Release ${{ needs.check-versions.outputs.image-tag }}
+          body: |
+            ## Docker Image Release
+
+            New Docker image has been built and pushed to Docker Hub.
+
+            **Versions:**
+            - Deno: `${{ needs.check-versions.outputs.deno-version }}`
+            - deployctl: `${{ needs.check-versions.outputs.deployctl-version }}`
+
+            **Docker Image:**
+            ```bash
+            docker pull ${{ env.IMAGE_NAME }}:${{ needs.check-versions.outputs.image-tag }}
+            ```
+
+            Or use the latest tag:
+            ```bash
+            docker pull ${{ env.IMAGE_NAME }}:latest
+            ```
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
