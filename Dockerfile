@@ -1,3 +1,3 @@
-FROM denoland/deno:2.7.7
+FROM denoland/deno:2.7.8
 RUN deno install -gArf jsr:@deno/deployctl@1.13.1
 USER root
